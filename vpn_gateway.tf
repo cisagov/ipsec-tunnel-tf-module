@@ -20,7 +20,7 @@ resource "aws_vpn_gateway_attachment" "vpn_vpc_attachment" {
 # necessary route tables
 resource "aws_vpn_gateway_route_propagation" "the_route_propagation" {
   count = length(var.route_table_ids)
-  
+
   vpn_gateway_id = aws_vpn_gateway.the_vpn_gateway.id
   route_table_id = var.route_table_ids[count.index]
 }
