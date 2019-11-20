@@ -1,4 +1,4 @@
 output "remote_gateway_configuration" {
-  value       = "The configuration information for the VPN connection's remove (non-AWS) gateway, in XML format."
-  description = "The remote gateway configuration parameters"
+  description = "The configuration information for the VPN connection's remote (non-AWS) gateway, in XML format."
+  value       = aws_vpn_connection.the_vpn_connection.customer_gateway_configuration
 }

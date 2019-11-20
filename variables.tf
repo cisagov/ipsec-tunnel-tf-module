@@ -14,7 +14,7 @@ variable "aws_availability_zone" {
 
 variable "remote_cidr_blocks" {
   type        = list(string)
-  description = "A list of CIDR blocks associated with the remote (non-AWS) end of the tunnel (e.g. [192.168.11.0/24, 10.10.11.0/24])."
+  description = "A list of CIDR blocks associated with the remote (non-AWS) end of the tunnel (e.g. [192.168.11.0/24, 10.10.11.0/24])"
 }
 
 variable "remote_ip" {
