@@ -4,12 +4,12 @@
 # You must provide a value for each of these parameters.
 # ------------------------------------------------------------------------------
 
-variable "aws_region" {
-  description = "The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1)"
-}
-
 variable "aws_availability_zone" {
   description = "The AWS availability zone where the Virtual Private Gateway is to be deployed (e.g. a, b, c, etc.)"
+}
+
+variable "aws_region" {
+  description = "The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1)"
 }
 
 variable "remote_cidr_blocks" {
