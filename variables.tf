@@ -5,10 +5,12 @@
 # ------------------------------------------------------------------------------
 
 variable "aws_availability_zone" {
+  type        = string
   description = "The AWS availability zone where the Virtual Private Gateway is to be deployed (e.g. a, b, c, etc.)"
 }
 
 variable "aws_region" {
+  type        = string
   description = "The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1)"
 }
 
@@ -18,6 +20,7 @@ variable "remote_cidr_blocks" {
 }
 
 variable "remote_ip" {
+  type        = string
   description = "The public IP of the remote (non-AWS) end of the tunnel (e.g. 1.2.3.4)"
 }
 
@@ -27,6 +30,7 @@ variable "route_table_ids" {
 }
 
 variable "vpc_id" {
+  type        = string
   description = "The ID of the AWS VPC where the Virtual private Gateway is to be deployed (e.g. vpc-0123456789abcdef0)"
 }
 
