@@ -26,27 +26,46 @@ module "ipsec_tunnel" {
 
 ## Examples ##
 
-* [Deploying into the default VPC](https://github.com/cisagov/ipsec-tunnel-tf-module/tree/develop/examples/default_vpc)
+* [Create an IPSec tunnel into a VPC](https://github.com/cisagov/ipsec-tunnel-tf-module/tree/develop/examples/basic_usage)
+
+## Requirements ##
+
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.12.0 |
+| aws | ~> 2.0 |
+
+## Providers ##
+
+| Name | Version |
+|------|---------|
+| aws | ~> 2.0 |
 
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-------:|:--------:|
-| aws_region | The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1) | string | | yes |
-| aws_availability_zone | The AWS availability zone where the Virtual Private Gateway is to be deployed (e.g. a, b, c, etc.) | string | | yes |
-| remote_bgp_asn | The BGP ASN of the remote (non-AWS) end of the tunnel (e.g. 11111).  This value is not used if static_routes_only is true. | number | `65000` | no |
-| remote_cidr_blocks | A list of CIDR blocks associated with the remote (non-AWS) end of the tunnel (e.g. [192.168.11.0/24, 10.10.11.0/24]) | list(string) | | yes |
-| remote_ip | The public IP of the remote (non-AWS) end of the tunnel (e.g. 1.2.3.4) | string | | yes |
-| route_table_ids | A list of ID corresponding to route tables that should route traffic through the VPN/IPSec gateway (e.g. [rtb-0123456789abcdef0, rtb-0123456789abcdef1]) | list(string) | | yes |
-| static_routes_only | A boolean value indicating whether the VPN connection uses static routes exclusively.  Static routes must be used for devices that don't support BGP. | bool | `true` | no |
-| tags | Tags to apply to all AWS resources created | map(string) | `{}` | no |
-| vpc_id | The ID of the AWS VPC where the Virtual private Gateway is to be deployed (e.g. vpc-0123456789abcdef0) | string | | yes |
+|------|-------------|------|---------|:--------:|
+| aws_availability_zone | The AWS availability zone where the Virtual Private Gateway is to be deployed (e.g. a, b, c, etc.) | `string` | n/a | yes |
+| aws_region | The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1) | `string` | n/a | yes |
+| remote_bgp_asn | The BGP ASN of the remote (non-AWS) end of the tunnel (e.g. 11111).  This value is not used if static_routes_only is true. | `number` | `65000` | no |
+| remote_cidr_blocks | A list of CIDR blocks associated with the remote (non-AWS) end of the tunnel (e.g. [192.168.11.0/24, 10.10.11.0/24]) | `list(string)` | n/a | yes |
+| remote_ip | The public IP of the remote (non-AWS) end of the tunnel (e.g. 1.2.3.4) | `string` | n/a | yes |
+| route_table_ids | A list of ID corresponding to route tables that should route traffic through the VPN/IPSec gateway (e.g. [rtb-0123456789abcdef0, rtb-0123456789abcdef1]) | `list(string)` | n/a | yes |
+| static_routes_only | A boolean value indicating whether the VPN connection uses static routes exclusively.  Static routes must be used for devices that don't support BGP. | `bool` | `true` | no |
+| tags | Tags to apply to all AWS resources created | `map(string)` | `{}` | no |
+| vpc_id | The ID of the AWS VPC where the Virtual private Gateway is to be deployed (e.g. vpc-0123456789abcdef0) | `string` | n/a | yes |
 
 ## Outputs ##
 
 | Name | Description |
 |------|-------------|
 | remote_gateway_configuration | The configuration information for the VPN connection's remote (non-AWS) gateway, in XML format. |
+
+## Notes ##
+
+Running `pre-commit` requires running `terraform init` in every directory that
+contains Terraform code. In this repository, these are the main directory and
+every directory under `examples/`.
 
 ## Contributing ##
 
