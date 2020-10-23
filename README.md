@@ -33,13 +33,13 @@ module "ipsec_tunnel" {
 | Name | Version |
 |------|---------|
 | terraform | ~> 0.12.0 |
-| aws | ~> 2.0 |
+| aws | ~> 3.0 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | ~> 2.0 |
+| aws | ~> 3.0 |
 
 ## Inputs ##
 
@@ -52,8 +52,6 @@ module "ipsec_tunnel" {
 | remote_ip | The public IP of the remote (non-AWS) end of the tunnel (e.g. 1.2.3.4) | `string` | n/a | yes |
 | route_table_ids | A list of ID corresponding to route tables that should route traffic through the VPN/IPSec gateway (e.g. [rtb-0123456789abcdef0, rtb-0123456789abcdef1]) | `list(string)` | n/a | yes |
 | static_routes_only | A boolean value indicating whether the VPN connection uses static routes exclusively.  Static routes must be used for devices that don't support BGP. | `bool` | `true` | no |
-| tags | Tags to apply to all AWS resources created | `map(string)` | `{}` | no |
-| vpc_id | The ID of the AWS VPC where the Virtual private Gateway is to be deployed (e.g. vpc-0123456789abcdef0) | `string` | n/a | yes |
 
 ## Outputs ##
 
@@ -67,9 +65,16 @@ Running `pre-commit` requires running `terraform init` in every directory that
 contains Terraform code. In this repository, these are the main directory and
 every directory under `examples/`.
 
+## New Repositories from a Skeleton ##
+
+Please see our [Project Setup guide](https://github.com/cisagov/development-guide/tree/develop/project_setup)
+for step-by-step instructions on how to start a new repository from
+a skeleton. This will save you time and effort when configuring a
+new repository!
+
 ## Contributing ##
 
-We welcome contributions!  Please see [here](CONTRIBUTING.md) for
+We welcome contributions!  Please see [`CONTRIBUTING.md`](CONTRIBUTING.md) for
 details.
 
 ## License ##
