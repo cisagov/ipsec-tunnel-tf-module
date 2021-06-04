@@ -52,9 +52,3 @@ variable "static_routes_only" {
   description = "A boolean value indicating whether the VPN connection uses static routes exclusively.  Static routes must be used for devices that don't support BGP."
   default     = true
 }
-
-variable "tags" {
-  type        = map(string)
-  description = "Tags to apply to all AWS resources created"
-  default     = {}
-}

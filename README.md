@@ -33,33 +33,47 @@ module "ipsec_tunnel" {
 | Name | Version |
 |------|---------|
 | terraform | ~> 0.12.0 |
-| aws | ~> 3.0 |
+| aws | ~> 3.38 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.0 |
+| aws | ~> 3.38 |
+
+## Modules ##
+
+No modules.
+
+## Resources ##
+
+| Name | Type |
+|------|------|
+| [aws_customer_gateway.the_customer_gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/customer_gateway) | resource |
+| [aws_vpn_connection.the_vpn_connection](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection) | resource |
+| [aws_vpn_connection_route.the_vpn_route](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection_route) | resource |
+| [aws_vpn_gateway.the_vpn_gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_gateway) | resource |
+| [aws_vpn_gateway_attachment.vpn_vpc_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_gateway_attachment) | resource |
+| [aws_vpn_gateway_route_propagation.the_route_propagation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_gateway_route_propagation) | resource |
 
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| aws_availability_zone | The AWS availability zone where the Virtual Private Gateway is to be deployed (e.g. a, b, c, etc.) | `string` | n/a | yes |
-| aws_region | The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1) | `string` | n/a | yes |
-| remote_bgp_asn | The BGP ASN of the remote (non-AWS) end of the tunnel (e.g. 11111).  This value is not used if static_routes_only is true. | `number` | `65000` | no |
-| remote_cidr_blocks | A list of CIDR blocks associated with the remote (non-AWS) end of the tunnel (e.g. [192.168.11.0/24, 10.10.11.0/24]) | `list(string)` | n/a | yes |
-| remote_ip | The public IP of the remote (non-AWS) end of the tunnel (e.g. 1.2.3.4) | `string` | n/a | yes |
-| route_table_ids | A list of ID corresponding to route tables that should route traffic through the VPN/IPSec gateway (e.g. [rtb-0123456789abcdef0, rtb-0123456789abcdef1]) | `list(string)` | n/a | yes |
-| static_routes_only | A boolean value indicating whether the VPN connection uses static routes exclusively.  Static routes must be used for devices that don't support BGP. | `bool` | `true` | no |
-| tags | Tags to apply to all AWS resources created | `map(string)` | `{}` | no |
-| vpc_id | The ID of the AWS VPC where the Virtual private Gateway is to be deployed (e.g. vpc-0123456789abcdef0) | `string` | n/a | yes |
+| aws\_availability\_zone | The AWS availability zone where the Virtual Private Gateway is to be deployed (e.g. a, b, c, etc.) | `string` | n/a | yes |
+| aws\_region | The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1) | `string` | n/a | yes |
+| remote\_bgp\_asn | The BGP ASN of the remote (non-AWS) end of the tunnel (e.g. 11111).  This value is not used if static\_routes\_only is true. | `number` | `65000` | no |
+| remote\_cidr\_blocks | A list of CIDR blocks associated with the remote (non-AWS) end of the tunnel (e.g. [192.168.11.0/24, 10.10.11.0/24]) | `list(string)` | n/a | yes |
+| remote\_ip | The public IP of the remote (non-AWS) end of the tunnel (e.g. 1.2.3.4) | `string` | n/a | yes |
+| route\_table\_ids | A list of ID corresponding to route tables that should route traffic through the VPN/IPSec gateway (e.g. [rtb-0123456789abcdef0, rtb-0123456789abcdef1]) | `list(string)` | n/a | yes |
+| static\_routes\_only | A boolean value indicating whether the VPN connection uses static routes exclusively.  Static routes must be used for devices that don't support BGP. | `bool` | `true` | no |
+| vpc\_id | The ID of the AWS VPC where the Virtual private Gateway is to be deployed (e.g. vpc-0123456789abcdef0) | `string` | n/a | yes |
 
 ## Outputs ##
 
 | Name | Description |
 |------|-------------|
-| remote_gateway_configuration | The configuration information for the VPN connection's remote (non-AWS) gateway, in XML format. |
+| remote\_gateway\_configuration | The configuration information for the VPN connection's remote (non-AWS) gateway, in XML format. |
 
 ## Notes ##
 
