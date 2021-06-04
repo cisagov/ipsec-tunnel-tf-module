@@ -1,9 +1,12 @@
 provider "aws" {
-  region = var.aws_region
   assume_role {
     role_arn     = var.default_role_arn
     session_name = "terraform-default"
   }
+  default_tags {
+    tags = var.tags
+  }
+  region = var.aws_region
 }
 
 #-------------------------------------------------------------------------------
@@ -53,6 +56,4 @@ module "ipsec_tunnel" {
   remote_ip             = var.remote_ip
   route_table_ids       = var.route_table_ids
   vpc_id                = aws_vpc.the_vpc.id
-
-  tags = var.tags
 }
