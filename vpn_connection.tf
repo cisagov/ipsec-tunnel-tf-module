@@ -1,16 +1,12 @@
 # The VPN connection
 resource "aws_vpn_connection" "the_vpn_connection" {
-  vpn_gateway_id      = aws_vpn_gateway.the_vpn_gateway.id
   customer_gateway_id = aws_customer_gateway.the_customer_gateway.id
-  type                = "ipsec.1"
   static_routes_only  = var.static_routes_only
-
-  tags = merge(
-    var.tags,
-    {
-      "Name" = "VPN/IPSec Connection"
-    },
-  )
+  tags = {
+    "Name" = "VPN/IPSec Connection"
+  }
+  type           = "ipsec.1"
+  vpn_gateway_id = aws_vpn_gateway.the_vpn_gateway.id
 }
 
 # Create routes for traffic that should be routed through the tunnel
