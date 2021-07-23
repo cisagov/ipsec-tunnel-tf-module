@@ -26,7 +26,7 @@ module "ipsec_tunnel" {
 
 ## Examples ##
 
-* [Create an IPSec tunnel into a VPC](https://github.com/cisagov/ipsec-tunnel-tf-module/tree/develop/examples/basic_usage)
+- [Create an IPSec tunnel into a VPC](https://github.com/cisagov/ipsec-tunnel-tf-module/tree/develop/examples/basic_usage)
 
 ## Requirements ##
 
