@@ -14,6 +14,11 @@ variable "aws_region" {
   description = "The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1)."
 }
 
+variable "default_role_arn" {
+  type        = string
+  description = "The ARN of the role to assume for the default provider (e.g. arn:aws:iam::123456789abc:role/MyDefaultRole)."
+}
+
 variable "remote_cidr_blocks" {
   type        = list(string)
   description = "A list of CIDR blocks associated with the remote (non-AWS) end of the tunnel (e.g. [192.168.11.0/24, 10.10.11.0/24])."
