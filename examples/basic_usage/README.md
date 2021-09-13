@@ -10,19 +10,22 @@ Note that this example may create resources which cost money. Run
 
 ## Requirements ##
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.13.0 |
+| aws | ~> 3.38 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| aws | ~> 3.38 |
 
 ## Modules ##
 
 | Name | Source | Version |
 |------|--------|---------|
-| ipsec\_tunnel | ../.. |  |
+| ipsec\_tunnel | ../.. | n/a |
 
 ## Resources ##
 
@@ -40,6 +43,7 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | aws\_availability\_zone | The AWS availability zone where the Virtual Private Gateway is to be deployed (e.g. a, b, c, etc.). | `string` | n/a | yes |
 | aws\_region | The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1). | `string` | n/a | yes |
+| default\_role\_arn | The ARN of the role to assume for the default provider (e.g. arn:aws:iam::123456789abc:role/MyDefaultRole). | `string` | n/a | yes |
 | remote\_cidr\_blocks | A list of CIDR blocks associated with the remote (non-AWS) end of the tunnel (e.g. [192.168.11.0/24, 10.10.11.0/24]). | `list(string)` | n/a | yes |
 | remote\_ip | The public IP of the remote (non-AWS) end of the tunnel (e.g. 1.2.3.4). | `string` | n/a | yes |
 | route\_table\_ids | A list of ID corresponding to route tables that should route traffic through the VPN/IPSec gateway (e.g. [rtb-0123456789abcdef0, rtb-0123456789abcdef1]). | `list(string)` | n/a | yes |
