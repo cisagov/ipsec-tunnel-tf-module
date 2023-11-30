@@ -28,18 +28,19 @@ module "ipsec_tunnel" {
 
 - [Basic usage](https://github.com/cisagov/ipsec-tunnel-tf-module/tree/develop/examples/basic_usage)
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements ##
 
 | Name | Version |
 |------|---------|
 | terraform | ~> 1.0 |
-| aws | ~> 3.38 |
+| aws | ~> 4.9 |
 
 ## Providers ##
 
 | Name | Version |
 |------|---------|
-| aws | ~> 3.38 |
+| aws | ~> 4.9 |
 
 ## Modules ##
 
@@ -74,6 +75,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | remote\_gateway\_configuration | The configuration information for the VPN connection's remote (non-AWS) gateway, in XML format. |
+<!-- END_TF_DOCS -->
 
 ## Notes ##
 
