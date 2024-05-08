@@ -18,9 +18,9 @@ resource "aws_vpc" "the_vpc" {
 }
 
 resource "aws_subnet" "the_subnet" {
-  vpc_id            = aws_vpc.the_vpc.id
-  cidr_block        = "10.75.1.0/24"
   availability_zone = "${var.aws_region}${var.aws_availability_zone}"
+  cidr_block        = "10.75.1.0/24"
+  vpc_id            = aws_vpc.the_vpc.id
 }
 
 #-------------------------------------------------------------------------------
@@ -39,9 +39,9 @@ resource "aws_default_route_table" "the_route_table" {
 
 # Route all external traffic through the internet gateway
 resource "aws_route" "route_external_traffic_through_internet_gateway" {
-  route_table_id         = aws_default_route_table.the_route_table.id
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.the_igw.id
+  route_table_id         = aws_default_route_table.the_route_table.id
 }
 
 #-------------------------------------------------------------------------------
@@ -50,8 +50,8 @@ resource "aws_route" "route_external_traffic_through_internet_gateway" {
 module "ipsec_tunnel" {
   source = "../.."
 
-  aws_region            = var.aws_region
   aws_availability_zone = var.aws_availability_zone
+  aws_region            = var.aws_region
   remote_cidr_blocks    = var.remote_cidr_blocks
   remote_ip             = var.remote_ip
   route_table_ids       = var.route_table_ids
