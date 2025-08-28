@@ -8,7 +8,7 @@ A Terraform module for deploying a an IPSec tunnel VPC.
 
 ```hcl
 module "ipsec_tunnel" {
-  source = "github.com/cisagov/ipsec-tunnel-tf-module"
+  source = "github.com/cisagov/ipsec-tunnel-tf-module?ref=v1.0.0"
 
   aws_region            = "us-west-1"
   aws_availability_zone = "b"
