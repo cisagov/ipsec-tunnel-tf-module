@@ -1,6 +1,8 @@
 # ipsec-tunnel-tf-module #
 
 [![GitHub Build Status](https://github.com/cisagov/ipsec-tunnel-tf-module/workflows/build/badge.svg)](https://github.com/cisagov/ipsec-tunnel-tf-module/actions)
+[![License](https://img.shields.io/github/license/cisagov/ipsec-tunnel-tf-module)](https://spdx.org/licenses/)
+[![CodeQL](https://github.com/cisagov/ipsec-tunnel-tf-module/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ipsec-tunnel-tf-module/actions/workflows/codeql-analysis.yml)
 
 A Terraform module for deploying a an IPSec tunnel VPC.
 
