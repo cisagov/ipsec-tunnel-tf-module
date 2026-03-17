@@ -34,14 +34,14 @@ module "ipsec_tunnel" {
 ## Requirements ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | terraform | >= 1.1 |
 | aws | >= 4.9 |
 
 ## Providers ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | aws | >= 4.9 |
 
 ## Modules ##
@@ -51,7 +51,7 @@ No modules.
 ## Resources ##
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_customer_gateway.the_customer_gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/customer_gateway) | resource |
 | [aws_vpn_connection.the_vpn_connection](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection) | resource |
 | [aws_vpn_connection_route.the_vpn_route](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpn_connection_route) | resource |
@@ -62,7 +62,7 @@ No modules.
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | aws\_availability\_zone | The AWS availability zone where the Virtual Private Gateway is to be deployed (e.g. a, b, c, etc.). | `string` | n/a | yes |
 | aws\_region | The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1). | `string` | n/a | yes |
 | remote\_bgp\_asn | The BGP ASN of the remote (non-AWS) end of the tunnel (e.g. 11111).  This value is not used if static\_routes\_only is true. | `number` | `65000` | no |
@@ -75,7 +75,7 @@ No modules.
 ## Outputs ##
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | remote\_gateway\_configuration | The configuration information for the VPN connection's remote (non-AWS) gateway, in XML format. |
 <!-- END_TF_DOCS -->
 
