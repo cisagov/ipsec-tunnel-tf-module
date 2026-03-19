@@ -12,26 +12,26 @@ Note that this example may create resources which cost money. Run
 ## Requirements ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | terraform | ~> 1.1 |
 | aws | ~> 6.7 |
 
 ## Providers ##
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | aws | ~> 6.7 |
 
 ## Modules ##
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | ipsec\_tunnel | ../.. | n/a |
 
 ## Resources ##
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [aws_default_route_table.the_route_table](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/default_route_table) | resource |
 | [aws_internet_gateway.the_igw](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway) | resource |
 | [aws_route.route_external_traffic_through_internet_gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route) | resource |
@@ -41,7 +41,7 @@ Note that this example may create resources which cost money. Run
 ## Inputs ##
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | aws\_availability\_zone | The AWS availability zone where the Virtual Private Gateway is to be deployed (e.g. a, b, c, etc.). | `string` | n/a | yes |
 | aws\_region | The AWS region where the Virtual Private Gateway is to be deployed (e.g. us-east-1). | `string` | n/a | yes |
 | default\_role\_arn | The ARN of the role to assume for the default provider (e.g. arn:aws:iam::123456789abc:role/MyDefaultRole). | `string` | n/a | yes |
@@ -54,6 +54,6 @@ Note that this example may create resources which cost money. Run
 ## Outputs ##
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | remote\_gateway\_configuration | The configuration information for the VPN connection's remote (non-AWS) gateway, in XML format. |
 <!-- END_TF_DOCS -->
